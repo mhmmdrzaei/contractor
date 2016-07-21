@@ -1,6 +1,11 @@
 <?php
 
 /** Tell WordPress to run theme_setup() when the 'after_setup_theme' hook is run. */
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}
 
 if ( ! function_exists( 'theme_setup' ) ):
 
@@ -80,10 +85,18 @@ function hackeryou_scripts() {
     null, // version number
     true //load in footer
   );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts');
 
+// boxslider 
+function loadbxslider()
+{
+    wp_enqueue_style('bxstyle', '/wp-content/themes/contratortheme/bx_styles/bx_styles.css');
+    wp_enqueue_script('bxscript', '/wp-content/themes/contractortheme/js/jquery.bxSlider.min.js', array('jquery'));
+}
+add_action('init', 'loadbxslider');
 
 /* Custom Title Tags */
 
@@ -194,7 +207,7 @@ if ( ! function_exists( 'hackeryou_posted_on' ) ) :
  * Prints HTML with meta information for the current post—date/time and author.
  */
 function hackeryou_posted_on() {
-	printf('<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s',
+	printf(' %2$s <span class="meta-sep"></span> %3$s',
 		'meta-prep meta-prep-author',
 		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
 			get_permalink(),
@@ -203,8 +216,7 @@ function hackeryou_posted_on() {
 		),
 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
 			get_author_posts_url( get_the_author_meta( 'ID' ) ),
-			sprintf( esc_attr( 'View all posts by %s'), get_the_author() ),
-			get_the_author()
+			sprintf( esc_attr( 'View all posts by %s') )
 		)
 	);
 }
@@ -259,6 +271,7 @@ function pre_r($obj) {
 	print_r($obj);
 	echo "</pre>";
 }
+
 
 /* is_blog() - checks various conditionals to figure out if you are currently within a blog page */
 function is_blog () {

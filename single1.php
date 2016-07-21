@@ -6,10 +6,10 @@
       <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <h3 class="entry-title"><?php the_title(); ?></h3>
+          <h1 class="entry-title"><?php the_title(); ?></h1>
 
           <div class="entry-meta">
-          <?php hackeryou_posted_on(); ?>
+            <?php hackeryou_posted_on(); ?>
           </div><!-- .entry-meta -->
 
           <div class="entry-content">
@@ -37,7 +37,7 @@
 
     </div> <!-- /.content -->
 
-
+    <?php get_sidebar(); ?>
 
   </div> <!-- /.container -->
 </div> <!-- /.main -->

@@ -1,6 +1,11 @@
 <footer>
-  <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
+  <div class="footer container">
+    <p>7a*11d</p>
+    <div class="social">
+    	<a href="mailto:performance@7a-11d.ca">performance@7a-11d.ca</a>
+    	<a href="http://www.twitter.com">twitter</a>
+    	<a href="http://www.instagram.com">instagram</a>
+    </div>
   </div>
 </footer>
 

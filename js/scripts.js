@@ -1,5 +1,11 @@
-$(function(){
 
-	console.log("It's working");
+	$(document).ready(function(){
+	
+	$('.bxslider').bxSlider({
+	  mode: 'fade',
+	  captions: true
+	  
+	});
+
 
 });
