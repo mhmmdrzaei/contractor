@@ -1,11 +1,11 @@
 <footer>
   <div class="footer container">
-    <p>7a*11d</p>
-    <div class="social">
-    	<a href="mailto:performance@7a-11d.ca">performance@7a-11d.ca</a>
-    	<a href="http://www.twitter.com">twitter</a>
-    	<a href="http://www.instagram.com">instagram</a>
-    </div>
+    <h4>7a*11d</h4>
+    	<?php wp_nav_menu(array(
+		'container' => 'nav',
+		'theme_location' => 'footer'
+	)); ?>
+
   </div>
 </footer>
 

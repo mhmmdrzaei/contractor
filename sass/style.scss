@@ -8,10 +8,10 @@
 */
 
 @import 'normalize';
-@import 'navigation';
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
+@import 'navigation';
 
 
 /*
@@ -56,6 +56,11 @@ h3 {
 	letter-spacing: 1px;
 
 }
+h4{
+	@include fontSize(10);
+	font-family: $headfont;
+	color:black;
+}
 
 a {
 	text-decoration: none;
@@ -86,6 +91,7 @@ img {
 body {
 	background: #fff url('images/bg.gif') no-repeat top left;
 	color: #333;
+	font-family: $bodyfont;
 }
 
 
@@ -106,6 +112,10 @@ body {
 // Header 
 header{
 	border-bottom: 3px solid #87000F;
+	ul.menu {
+			list-style: none;
+			    display: flex;
+			}
 }
 .headerMenu {
 	display: flex;
@@ -216,6 +226,9 @@ button {
     background: #F1F1F1;
     border: 1px solid black;
     box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.75);
+    &:hover{
+    	box-shadow: 6px 6px 7px -2px rgba(0,0,0,0.75);
+    }
 }
 .plusSign {
 	padding: 5px;
@@ -226,9 +239,9 @@ button {
 	flex-direction: column;
 	// align-items: center;
 		.line1, .line2 {
-	height:3px;
+	height:1px;
 	width:20px;
-	border:3px solid black;
+	border:2px solid black;
 	position: relative;
     top: 7px;
 	
@@ -237,6 +250,8 @@ button {
 		transform: rotate(90deg) translate(-10px,0);
 		opacity: 1;
 		transition: all 0.5s ease;
+		position: relative;
+    	top: 13px;
 		}
 
 		.visHidden {
@@ -251,6 +266,143 @@ button {
 	.artistMain {
 		padding: 0px 0 15px 0;
 	}
+	.scheduleMain {
+		background: white;
+    	padding: 15px;
+    	margin-bottom: 12px;
+    	.performanceschedule{
+    		color: #87000F;
+    		text-align: center;
+    		
+    	}
+    	.scheduleMainOne {
+    		display: flex;
+    		justify-content: space-between;
+    	}
+    	.scheduleMainTwo{
+    		margin-top: 10px;
+    	}
+    	.addressschedule{
+    		margin-top: 3px;
+    		color: #87000F;
+
+    	}
+    	.dateschedule, .timeschedule {
+    		color: #757575;
+    	}
+    	.dateschedule{
+    		position: relative;
+    		left:20px;
+    	}
+
+
+	}
+
+	.catalog {
+	margin: 5px 0px;
+    padding: 18px 10PX;
+    background: #87000F;
+    border: 1px solid black;
+    box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.75);
+    font-family: $headfont;
+    a{
+    	color: white;
+    	padding: 20px 47% 20px 0;
+    	&:hover {
+    		color:#909090;
+    	}
+    }
+    &:hover{	
+    box-shadow: 6px 6px 7px -2px rgba(0,0,0,0.75);
+    }
+    
+	}
+
+	.updates {
+		h2 {
+			border-bottom: 3px solid #87000F;
+			padding: 10px;
+			margin-top: 25px;
+		}
+		.entry-date{
+			color:#757575;
+		}
+		h4{
+			margin: 10px 0;
+		}
+		a {
+			display: block;
+			margin: 10px 0;
+			position: relative;
+			left: 400px;
+		}
+
+
+	}
+	// Footer 
+	footer {
+		border-top: 3px solid #87000F;
+		font-family: $headfont;
+		.footer {
+			display: flex;
+			align-items: center;
+			h4{
+				width: 45%;
+			}
+		}
+		ul.menu {
+			list-style: none;
+			    display: flex;
+			    justify-content: space-between;
+			    a {
+			    	&:hover {
+			    		color: #87000F;
+			    	}
+			    }
+			}
+		}
+
+// About Page
+.aboutComplete {
+	display: flex;
+	
+	h3 {
+		width: 100%;
+	}
+	h2 {
+		border-bottom: 3px solid #87000F;
+    	margin: 28px 0px;
+    	padding-bottom: 6px;
+	}
+	h4 {
+		margin: 45px 0;
+	}
+}
+.aboutSide{
+	width: 30%;
+	padding: 1%;
+	h3 {
+		padding: 35px 0;
+	}
+	h2 {
+		border-bottom: 3px solid #87000F;
+		padding-bottom: 5px;
+	}
+}
+.aboutMain{
+	width: 70%;
+	padding: 0 7%;
+}
+.sponsors {
+	    margin-bottom: 40px;
+	img {
+		margin: 5px;
+		width: 19%;
+		max-height: 45px;
+	}
+}
+
+	
 
 
 

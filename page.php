@@ -3,23 +3,20 @@
 <div class="main">
   <div class="container">
 
-  <div class="content">
+    <div class="content">
 
- <?php $dreamBeanQuery = new WP_Query(array(
+        <?php $dreamBeanQuery = new WP_Query(array(
           'post_per_page' => 1, // if you want all its -1
           'post_type' => 'festival_year',
           'category_name' => 'featured'
           
-      )); ?>
-      
+            )); ?>
 
-      <?php if($dreamBeanQuery-> have_posts()):?>
+        <?php if($dreamBeanQuery-> have_posts()):?>
           <?php while($dreamBeanQuery->have_posts()): ?>
             <?php $dreamBeanQuery->the_post(); ?>
              <?php $dreamBeanQuery->the_content(); ?>
-            
 
-              
              <div class="yearComplete">
                 <div class="yearSide">
                <h3><?php the_title(); ?> </h3>
@@ -40,6 +37,7 @@
                      <?php endif; ?>
                    </div>
                </div>
+
                <div class="yearMain">
                  <?php if( have_rows('gallery_slider') ) : ?>
                      <ul class="bxslider">
@@ -59,7 +57,7 @@
                       <h2><?php the_title(); ?> Artists</h2>
                       <div class="plusSign">
                           <div class="line1"></div>
-                         <div class="line2 visHidden"></div>
+                         <div class="line2"></div>
                       </div>
                     </div>
                      <div class="artistMain">
@@ -74,37 +72,43 @@
                      <h2>Festival Schedule</h2>
                      <div class="plusSign">
                           <div class="line1"></div>
-                         <div class="line2 visHidden"></div>
+                         <div class="line2"></div>
                       </div>
                     </div>
                        <?php while( has_sub_fields('schedule') ): ?>
-                         <div class="nameschedule">
-                           <?php the_sub_field('artist_name_schedule'); ?>
-                         </div>
-                         <div class="performanceschedule">
-                           <?php the_sub_field('performance_name'); ?>
-                         </div>
-                          <div class="venueschedule">
-                           <?php the_sub_field('venue_name_schedule'); ?>
-                         </div>
-                         <div class="addressschedule">
-                           <?php the_sub_field('address_schedule'); ?>
-                         </div>
-                         <div class="dateschedule">
-                           <?php the_sub_field('date_schedule'); ?>
-                         </div>
-                         <div class="timeschedule">
-                           <?php the_sub_field('time_schedule'); ?>
-                         </div>
-                         
-                     <?php endwhile;//end of schedule loop ?>
+                        <div class="scheduleMain">
+                           <div class="scheduleMainOne">
+                             <div class="nameschedule">
+                               <?php the_sub_field('artist_name_schedule'); ?>
+                             </div>
+                             <div class="performanceschedule">
+                               <?php the_sub_field('perforamance_name'); ?>
+                             </div>
+                             <div class="dateschedule">
+                               <?php the_sub_field('date_schedule'); ?>
+                             </div>
+                             <div class="timeschedule">
+                               <?php the_sub_field('time_schedule'); ?>
+                             </div>
+                           </div>
+                           <div class="scheduleMainTwo">
+                             <div class="venueschedule">
+                               <?php the_sub_field('venue_name_schedule'); ?>
+                             </div>
+                             <div class="addressschedule">
+                               <?php the_sub_field('address_schedule'); ?>
+                             </div>
+                           </div>
+                           </div>
+                           
+                            <?php endwhile;//end of schedule loop ?>
                      </div></button>
                    <button><div class="interviews boxToggle">
                       <div class="boxToggleHeader">
                        <h2><?php the_title(); ?> Interviews</h2>
                        <div class="plusSign">
                           <div class="line1"></div>
-                         <div class="line2 visHidden"></div>
+                         <div class="line2"></div>
                       </div>
                       </div>
                        <div class="artistMain">
@@ -121,11 +125,30 @@
                          <h2><?php the_sub_field('additional_field_title_title'); ?></h2>
                          <div class="plusSign">
                             <div class="line1"></div>
-                           <div class="line2 visHidden"></div>
+                           <div class="line2"></div>
                         </div>
                         </div>
                           
                           <?php the_sub_field('additional_field_text'); ?>
+                        </div>
+                      <?php endwhile;//end of additional loop ?>
+                      
+                    </div></button>
+                    <button> <div class="eyesEars boxToggle">
+                      <div class="boxToggleHeader">
+                         <h2>Festival Blog's Eyes and Ears</h2>
+                         <div class="plusSign">
+                            <div class="line1"></div>
+                           <div class="line2"></div>
+                        </div>
+                        </div>
+                      <?php while( has_sub_fields('festival_eyes_and_ears') ): ?>
+                        
+                        <div class="eyesEarsName">
+                         <?php the_sub_field('contributor_name'); ?>
+                        </div>
+                       <div class="eyesEarsBio visHidden">   
+                          <?php the_sub_field('contributor_bio'); ?>
                         </div>
                       <?php endwhile;//end of additional loop ?>
                       
@@ -140,16 +163,26 @@
                        <a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?>Download This Years Catalog (PDF)</a>
                  
                      <?php endif; ?>
+                     </div>
+
+                     <div class="sponsors">
+                       <h4>7a*11d and its presenting partners gratefully acknowledge the support of:</h4>
+                       
+                       <?php while( has_sub_fields('presenting_partners') ): ?>
+                           <?php $imageLogo = get_sub_field('logo_image_logo') ?> 
+                             <img src="<?php echo $imageLogo['sizes']['large'] ?>" alt="">        
+                         <?php endwhile;//image loop ?>
+                                              </div>
                       <?php endwhile; ?>
                        <?php wp_reset_postdata(); ?> 
                        <!-- this will end the and reset and go back to normal so you can go back to normal to your page -->
                    <?php endif; ?>
-                   </div>
+                   
                    
                  
                  <!-- UPDATES  -->
                  <div class="updates">
-                   <h3>Updates</h3>
+                   <h2>Festival Updates</h2>
                    <?
                      $args = array( 'post_type' => 'festival_updates', 'posts_per_page' => 10 );
                      query_posts( $args ); // hijack the main loop
@@ -161,7 +194,7 @@
                        
                  
                      </div> <? /* */  ?>
-                     <h2><? the_title(); ?></h>
+                     <h4><? the_title(); ?></h4>
                      <div class="entry-content">
                        <?
                        global $more;    // Declare global $more (before the loop).
@@ -181,7 +214,8 @@
              </div>
           
 
-    
+    </div>
+    </div>
 
     </div> <!-- /,content -->
 

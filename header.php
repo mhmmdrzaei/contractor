@@ -17,7 +17,7 @@
 <body <?php body_class(); ?>>
 
 <header>
-  <div class="backgroundimg"></div>
+
   <div class="container">
 
    <div class="headerMenu"> <?php wp_nav_menu( array(
