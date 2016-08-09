@@ -10,10 +10,11 @@ $terms = get_terms( 'animal_cat', array(
 
 <div class="main">
   <div class="container">
-  <h2>Archives</h2>
+  
   <div class="archivesToggle">
-    <h3>Artists</h3>
-    <h3>Year</h3>
+  <h3>Archives</h3>
+    <h2>Artists</h2>
+    <h2>Year</h2>
   </div>
 
   <div class="content">
@@ -34,9 +35,9 @@ $terms = get_terms( 'animal_cat', array(
                 <?php echo category_description($category); ?>
                 <?php $festivalArtistQueryQuery->the_post(); ?>
                  <?php $festivalArtistQueryQuery->the_content(); ?>
-                  <div class="yearArchive">
-                    <h3><a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
-                    <?php the_title(); ?></a></h3>
+                  <div class="artistArchive">
+                    <p><a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
+                    <?php the_title(); ?></a></p>
                   
                   </div>
                     <?php endwhile; ?>
@@ -72,20 +73,20 @@ $terms = get_terms( 'animal_cat', array(
               //star of the loop
              while ( $query->have_posts() ) : $query->the_post(); ?>
       
-                    <h3>
+                    <p>
 
                     <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
-                    <?php the_title(); ?></a></h3>
-                    <h5><?php the_field('sub_title'); ?></h5>
-                  </div> 
+                    <?php the_title(); ?></a></p>
+                  
                
-              <?php endwhile;
+              <?php endwhile; ?>
+           </div> 
            
-           
-          // use reset postdata to restore orginal query
+          <?php // use reset postdata to restore orginal query
           wp_reset_postdata();
        
       } ?>
+
 </div>
     </div> <!-- /,content -->
 <?php get_footer(); ?>
