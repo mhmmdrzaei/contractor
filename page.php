@@ -61,62 +61,12 @@
                       </div>
                     </div>
                      <div class="artistMain">
-                      <?php while( has_sub_fields('artists_name') ): ?>
-                        <a href="<?php the_sub_field('artist_link'); ?>" target="blank"><?php the_sub_field('artist_name_name') ?></a> // 
+                       <?php while( has_sub_fields('artists_name_festival_year') ): ?>
+                       <a href="<?php the_sub_field('artist_name_select'); ?>"> <?php the_sub_field('artist_name_festival_year'); ?></a> // 
                                 
                      <?php endwhile;//end of Artist Name loop ?>
                      </div> 
                     </div></button>
-                   <button><div class="schedule boxToggle">
-                   <div class="boxToggleHeader">
-                     <h2>Festival Schedule</h2>
-                     <div class="plusSign">
-                          <div class="line1"></div>
-                         <div class="line2"></div>
-                      </div>
-                    </div>
-                       <?php while( has_sub_fields('schedule') ): ?>
-                        <div class="scheduleMain">
-                           <div class="scheduleMainOne">
-                             <div class="nameschedule">
-                               <?php the_sub_field('artist_name_schedule'); ?>
-                             </div>
-                             <div class="performanceschedule">
-                               <?php the_sub_field('perforamance_name'); ?>
-                             </div>
-                             <div class="dateschedule">
-                               <?php the_sub_field('date_schedule'); ?>
-                             </div>
-                             <div class="timeschedule">
-                               <?php the_sub_field('time_schedule'); ?>
-                             </div>
-                           </div>
-                           <div class="scheduleMainTwo">
-                             <div class="venueschedule">
-                               <?php the_sub_field('venue_name_schedule'); ?>
-                             </div>
-                             <div class="addressschedule">
-                               <?php the_sub_field('address_schedule'); ?>
-                             </div>
-                           </div>
-                           </div>
-                           
-                            <?php endwhile;//end of schedule loop ?>
-                     </div></button>
-                   <button><div class="interviews boxToggle">
-                      <div class="boxToggleHeader">
-                       <h2><?php the_title(); ?> Interviews</h2>
-                       <div class="plusSign">
-                          <div class="line1"></div>
-                         <div class="line2"></div>
-                      </div>
-                      </div>
-                       <div class="artistMain">
-                       <?php while( has_sub_fields('interview') ): ?>
-                        <a href="<?php the_sub_field('interview_link_interview'); ?>" target="blank"><?php the_sub_field('artist_name_interview') ?></a> // 
-                       <?php endwhile;//end of inteview loop ?>
-                       </div> 
-                     </div></button>
                   <button> <div class="additional">
                       
                       <?php while( has_sub_fields('additional_field') ): ?>
@@ -160,7 +110,7 @@
                  
                      if( $file ): ?>
                        
-                       <a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?>Download This Years Catalog (PDF)</a>
+                       <a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?>Download This Years' Promotional Material (PDF)</a>
                  
                      <?php endif; ?>
                      </div>

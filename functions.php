@@ -291,3 +291,28 @@ function get_post_parent($post) {
 		return $post->ID;
 	}
 }
+
+// register a taxonomy called 'Festival Year'
+function wptp_register_taxonomy() {
+    register_taxonomy( 'animal_cat', 'festival_year',
+        array(
+            'labels' => array(
+                'name'              => 'Festival Years',
+                'singular_name'     => 'Festival Year',
+                'search_items'      => 'Search Festival Years',
+                'all_items'         => 'All Festival Years',
+                'edit_item'         => 'Edit Festival Years',
+                'update_item'       => 'Update Festival Years',
+                'add_new_item'      => 'Add New Festival Years',
+                'new_item_name'     => 'New Festival Year Name',
+                'menu_name'         => 'Festival Year',
+            ),
+            'hierarchical' => true,
+            'sort' => true,
+            'args' => array( 'orderby' => 'ASC', 'order' => 'ASC' ),
+            'rewrite' => array( 'slug' => 'taxonomy_year' ),
+            'show_admin_column' => true
+        )
+    );
+}
+add_action( 'init', 'wptp_register_taxonomy' );

@@ -6,7 +6,7 @@
 
   <div class="content">
  <?php $festivalArtistQuery = new WP_Query(array(
-          'post_per_page' => 1, // if you want all its -1
+          'post_per_page' => -1, // if you want all its -1
           'post_type' => 'festival_artist'
 
       )); ?>
@@ -26,7 +26,7 @@
               
             <div class="visualWork">
                <?php while( has_sub_fields('visual_work') ): ?>
-                    <h2><?php the_sub_field('year_of_programming'); ?></h2>
+                    <h2><?php the_sub_field('year_of_programming_artist_artist'); ?> Programming </h2>
                     <?php $image = get_sub_field('artist_picture') ?> 
             <img src="<?php echo $image['sizes']['large'] ?>" alt="">
                 <p class="artistCaption"><?php the_sub_field('artist_caption'); ?></p>
@@ -40,12 +40,26 @@
                 <a href="<?php the_sub_field('artists_website'); ?>"><?php the_sub_field('artists_website'); ?></a>
                 
                 <div class="vimeo">
-                  <iframe src="https://player.vimeo.com/video/<?php the_sub_field('vimeo_link'); ?>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                  <?php the_sub_field('vimeo_link'); ?>
+                </div>
+                <div class="schedule">
+                  <?php while( has_sub_fields('performance_schedule') ): ?>
+                    <div class="performanceDateTime">
+                      <?php the_sub_field('performance_date_and_time_repeater'); ?>
+                    </div>
+                    <div class="perfromanceName">
+                      <?php the_sub_field('performance_title'); ?>
+                    </div>
+                    <div class="performanceVenue">
+                      <?php the_sub_field('venue'); ?>
+                    </div>
+                  <?php endwhile;//end of schedule loop ?>
                 </div>
              
                 <?php endwhile;//end of Artist Name loop ?>
                 
               </div>
+
               <div class="content">
                 <?php the_content(); ?>
                 
