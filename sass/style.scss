@@ -208,9 +208,9 @@ button {
 	&:focus {
 		outline: none;
 	}
-	// &:hover > .plusSign > .line2 {
-	// 	opacity: 0;
-	// }
+	&:hover > .plusSign > .line2 {
+		display: none;
+	}
 }
 
 .boxToggleHeader {
@@ -254,11 +254,15 @@ button {
     	top: 13px;
 		}
 
-		.visHidden {
-			visibility: hidden;
-		}
+		
 
 	
+	}
+	.visHidden {
+			display: none;
+		}
+	.toggleInfo {
+		display: none;
 	}
 	.additionalEach {
 		margin: 6px 0 18px 0;
@@ -307,7 +311,7 @@ button {
     font-family: $headfont;
     a{
     	color: white;
-    	padding: 20px 47% 20px 0;
+    	padding: 20px 15% 20px 0;
     	&:hover {
     		color:#909090;
     	}
@@ -447,22 +451,80 @@ button {
 //Archives
 .archivesToggle {
 	display: flex;
+	padding:35px 0 10px 0;
+	h3 {
+		width: 30%;
+		align-self: center;
+	}
+	.archivesArtistList, .archivesYearList {
+		width: 15%;
+
+	}
+
+}
+.artistArchiveToggle{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 3%;
+
 }
 .artistArchive {
+	width: 50%;
 	p {
 		margin: 0;
 	}
 }
 .yearArchiveToggle {
 	display: flex;
-}
-.yearArchive {
-	width: 50%
+	flex-wrap: wrap; 
+	padding: 7%;
+	.yearArchive {
+	width: 40%;
+	padding-right: 13%;
+	padding-left: 10px;
+	margin: 20px;
+	border: 1px solid black;
+	min-height: 130px;
+	background: #FCFCFC;
+	box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.75);
+    &:hover{
+    	box-shadow: 6px 6px 7px -2px rgba(0,0,0,0.75);
+    }
 	a {
 		color: #757575;
 		&:hover {
 			color:#87000F;
 		}
+	}
+}
+}
+
+// tag page 
+.contentTag{
+	display: flex;
+	flex-wrap: wrap; 
+	margin-top: 30px;
+	.tagTitle {
+		width:30%;
+
+	}
+	.tagResults {
+		width: 70%;
+		
+	}
+}
+// Search Page
+.contentSearch{
+	display: flex;
+	flex-wrap: wrap; 
+	margin-top: 30px;
+	.searchTitle {
+		width:30%;
+
+	}
+	.searchResults {
+		width: 70%;
+		
 	}
 }
 

@@ -8,4 +8,14 @@
 	});
 
 
+	$('button.artists').on('click', function() {
+
+		var line = $(this).find('.line2');
+		line.toggleClass('visHidden');
+		
+		$('.artistMain').toggleClass('toggleInfo');
+
+	});
+
+
 });

@@ -13,8 +13,12 @@ $terms = get_terms( 'animal_cat', array(
   
   <div class="archivesToggle">
   <h3>Archives</h3>
-    <h2>Artists</h2>
-    <h2>Year</h2>
+    <div class="archivesArtistList">
+      <h2>Artists</h2>
+    </div>
+    <div class="archivesYearList">
+      <h2>Year</h2>
+    </div>
   </div>
 
   <div class="content">
@@ -87,6 +91,7 @@ $terms = get_terms( 'animal_cat', array(
        
       } ?>
 
+</div>
 </div>
     </div> <!-- /,content -->
 <?php get_footer(); ?>

@@ -52,21 +52,23 @@
                      </ul><!-- .bxslider -->
                  <?php endif;  // end gallery repeater field?>
                  
-                 <button><div class="artists boxToggle">
+                 <div class="artists boxToggle">
+                 <button class="artists">
                     <div class="boxToggleHeader">
                       <h2><?php the_title(); ?> Artists</h2>
                       <div class="plusSign">
                           <div class="line1"></div>
                          <div class="line2"></div>
                       </div>
-                    </div>
-                     <div class="artistMain">
+                    </div>  </button>
+                     <div class="toggleInfo artistMain">
                      <?php while( has_sub_fields('artists_festival_year') ): ?>
                        <a href="<?php the_sub_field('artist_page_year_link'); ?>"> <?php the_sub_field('artist_name_year_select'); ?></a> // 
                                 
                      <?php endwhile;//end of Artist Name loop ?>
                      </div> 
-                    </div></button>
+                    </div>
+                    
 
                   <button><div class="schedule boxToggle">
                   <div class="scheduleHead">
@@ -91,12 +93,13 @@
                             <div class="schedulePerformanceNam">
                             <?php the_sub_field('performance_name_schedule'); ?>
                             </div>
+                            <div class="scheduleVenue">
+                            <?php the_sub_field('performance_venue'); ?>
+                            </div>
                             <div class="scheduleTime">
                             <?php the_sub_field('performance_time'); ?>
                             </div>
-                             <div class="scheduleVenue">
-                            <?php the_sub_field('performance_venue'); ?>
-                            </div>
+                             
 
 
 

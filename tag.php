@@ -1,14 +1,15 @@
 <?php get_header(); ?>
+	
+	<div class="main">
+	  <div class="container">
+	
+	    <div class="contentTag">
+	      <div class="tagTitle"><h3>Blogposts: <?php single_tag_title(); ?></h3></div>
+			<div class="tagResults">
+			<?php get_template_part( 'loop', 'tag' ); ?></div>	    
 
-<div class="main">
-  <div class="container">
-
-    <div class="content">
-      <h1>Tag Archives: <?php single_tag_title(); ?></h1>
-      <?php get_template_part( 'loop', 'tag' ); ?>
-    </div> <!-- /.content -->
-
-  </div><!-- /.container -->
-</div><!-- /.main -->
-
+			</div> <!-- /.content -->
+	
+	  </div><!-- /.container -->
+	</div><!-- /.main -->
 <?php get_footer(); ?>
