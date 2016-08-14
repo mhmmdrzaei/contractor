@@ -213,57 +213,10 @@ button {
 	}
 }
 
-.boxToggleHeader {
-	display: flex;
-	h2 {
-		width: 90%;
-	}
 
-}
-.boxToggle {
-	margin: 5px 0px;
-    padding: 18px 10PX;
-    background: #F1F1F1;
-    border: 1px solid black;
-    box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.75);
-    &:hover{
-    	box-shadow: 6px 6px 7px -2px rgba(0,0,0,0.75);
-    }
-}
-.plusSign {
-	padding: 5px;
-    margin: 15px;
-	border: 3px solid black;
-	border-radius: 50%;
-	display: flex;
-	flex-direction: column;
-	// align-items: center;
-		.line1, .line2 {
-	height:1px;
-	width:20px;
-	border:2px solid black;
-	position: relative;
-    top: 7px;
-	
-	}
-		.line2 {
-		transform: rotate(90deg) translate(-10px,0);
-		opacity: 1;
-		transition: all 0.5s ease;
-		position: relative;
-    	top: 13px;
-		}
-
-		
 
 	
-	}
-	.visHidden {
-			display: none;
-		}
-	.toggleInfo {
-		display: none;
-	}
+
 	.additionalEach {
 		margin: 6px 0 18px 0;
 	}
@@ -294,9 +247,29 @@ button {
     	.dateschedule, .timeschedule {
     		color: #757575;
     	}
-    	.dateschedule{
-    		position: relative;
-    		left:20px;
+    	.scheduleDate {
+    		font-family: $headfont;
+    		text-decoration: underline;
+    		margin-bottom: 5px;
+    	}
+
+
+    	.schedDetails {
+    		display: flex;
+    		@include fontSize(8);
+    		align-content: space-between;
+    		border-bottom: 1px dashed black;
+    		margin-bottom: 3px;
+    	}
+    	.artistNameSchedule {
+    		font-family: $headfont;
+
+    	}
+    	.scheduleTime {
+			width: 10%;
+    	}
+    	.scheduleVenue {
+    		width: 30%;
     	}
 
 
@@ -452,12 +425,14 @@ button {
 .archivesToggle {
 	display: flex;
 	padding:35px 0 10px 0;
+
 	h3 {
 		width: 30%;
 		align-self: center;
 	}
 	.archivesArtistList, .archivesYearList {
 		width: 15%;
+		cursor: pointer;
 
 	}
 
@@ -477,7 +452,7 @@ button {
 .yearArchiveToggle {
 	display: flex;
 	flex-wrap: wrap; 
-	padding: 7%;
+	padding: 3%;
 	.yearArchive {
 	width: 40%;
 	padding-right: 13%;
@@ -498,6 +473,25 @@ button {
 	}
 }
 }
+.awayAway {
+	display: none;
+}
+
+.away {
+	display: none;
+}
+
+	h2.underlineYear {
+		border-bottom: 2px solid #87000F;
+    	width: 52px;
+	}
+
+	.underlineArtist {
+		border-bottom: 2px solid #87000F;
+    	width: 76px;
+	}
+
+	
 
 // tag page 
 .contentTag{
@@ -527,15 +521,130 @@ button {
 		
 	}
 }
+// artist page 
 
-
+.artistComplete {
+	display: flex;
 	
+	h3 {
+		width: 100%;
+	}
+}
+	
+.artistTitle{
+	width: 30%;
+	padding: 1%;
+	h2 {
+		padding: 35px 0;
+		border-bottom: 3px solid #87000F;
+		padding-bottom: 5px;
+	}
+}
+.artistMainMain{
+	width: 70%;
+	padding: 7%;
+}
+
+.schedule {
+	margin: 20px 0;
+}
 
 
+// maybe needed toggle code
+/* Toggle link when clicked */
+/* Main toggle */
+.toggle { 
+	margin: 5px 0px;
+    padding: 1px 10px;
+    background: #F1F1F1;
+    border: 1px solid black;
+    box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.75);
+    &:hover{
+    	box-shadow: 6px 6px 7px -2px rgba(0,0,0,0.75);
+    }
+	margin-bottom: 10px;
+		
+}
 
+/* Toggle Link text */
+.toggle .toggle-trigger {
+	display:block;
+	cursor: pointer;
+	position:relative;
+	text-decoration: none;
+	color: #000;
+}
 
+/* Toggle Link hover state */
+.toggle .toggle-trigger:hover {
+	opacity: .8;
+	text-decoration: none;
+}
 
+/* Toggle link when clicked */
+.toggle .active {
+	text-decoration: none;
+	border-bottom: 1px solid #e5e5e5;
+	-webkit-box-shadow: 0 8px 6px -6px #ccc;
+	   -moz-box-shadow: 0 8px 6px -6px #ccc;
+	        box-shadow: 0 8px 6px -6px #ccc;
+	color: #000;
+}
 
+/* Lets add a "-" before the toggle link */
+.toggle .toggle-trigger:before {
+	content: "+";	/* You can add any symbol, font icon, or graphic icon */
+	margin-right: 10px;
+	font-size: 1.3em;	
+}
 
+/* When the toggle is active, change the "-" to a "+" */
+.toggle .active.toggle-trigger:before {
+	content: "-";
+}
 
+/* The content of the toggle */
+.toggle .toggle-content {
+	padding: 10px 20px 15px 20px;
+	color:#666;
+}
 
+// festival updates Page 
+
+.navigation {
+	display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.entry-title {
+	margin: 35px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #87000F;
+}
+.single {
+	padding-bottom: 30px;
+}
+
+//readmore button
+.readmore {
+	
+    padding: 10px 10px;
+    background: #87000F;
+    border: 1px solid black;
+    box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.75);
+    font-family: $headfont;
+    text-align: center;
+    a{
+    	width: 100%;
+    	color: white;
+    	position: inherit;
+
+    	&:hover {
+    		color:#909090;
+    	}
+    }
+    &:hover{	
+    box-shadow: 6px 6px 7px -2px rgba(0,0,0,0.75);
+    }
+    
+	}

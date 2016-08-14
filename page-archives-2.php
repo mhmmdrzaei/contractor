@@ -14,15 +14,15 @@ $terms = get_terms( 'animal_cat', array(
   <div class="archivesToggle">
   <h3>Archives</h3>
     <div class="archivesArtistList">
-      <h2>Artists</h2>
+      <h2 id="hartist">Artists</h2>
     </div>
     <div class="archivesYearList">
-      <h2>Year</h2>
+      <h2 id="hyear" class="underlineYear">Year</h2>
     </div>
   </div>
 
   <div class="content">
-      <div class="artistArchiveToggle">
+      <div class="artistArchiveToggle away">
         <?php $festivalArtistQueryQuery = new WP_Query(array(
               'post_per_page' => -1, // if you want all its -1
               'post_type' => 'festival_artist',

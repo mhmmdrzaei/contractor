@@ -19,7 +19,7 @@
 
              <div class="yearComplete">
                 <div class="yearSide">
-               <h3><?php the_title(); ?> </h3>
+               <h3><?php the_field('sub_title'); ?> </h3>
                  <div class="contentWelcome">
                    <h2>Welcome</h2>
                    <?php the_content(); ?>
@@ -51,105 +51,94 @@
                          <?php endwhile; ?>
                      </ul><!-- .bxslider -->
                  <?php endif;  // end gallery repeater field?>
-                 
-                 <div class="artists boxToggle">
-                 <button class="artists">
-                    <div class="boxToggleHeader">
-                      <h2><?php the_title(); ?> Artists</h2>
-                      <div class="plusSign">
-                          <div class="line1"></div>
-                         <div class="line2"></div>
-                      </div>
-                    </div>  </button>
-                     <div class="toggleInfo artistMain">
+                 <!-- Artists -->
+                 <div class="toggle">
+
+                  <!-- Toggle Link -->
+                  <h2 class="toggle-trigger"><?php the_field('sub_title'); ?> Artists</h2>
+
+                  <!-- Toggle Content to display -->
+                  <div class="artistMain toggle-content">
                      <?php while( has_sub_fields('artists_festival_year') ): ?>
                        <a href="<?php the_sub_field('artist_page_year_link'); ?>"> <?php the_sub_field('artist_name_year_select'); ?></a> // 
                                 
                      <?php endwhile;//end of Artist Name loop ?>
-                     </div> 
-                    </div>
-                    
+                  </div><!-- .toggle-content (end) -->
+                 </div><!-- .toggle (end) -->
 
-                  <button><div class="schedule boxToggle">
-                  <div class="scheduleHead">
-                    <div class="boxToggleHeader">
-                      <h2><?php the_title(); ?> Festival Schedule</h2>
-                        <div class="plusSign">
-                            <div class="line1"></div>
-                           <div class="line2"></div>
-                          </div>
-                        </div>
+                 <!-- Schedule -->
+                 <div class="toggle">
 
-                        
-                      <div class="scheduleMain">
-                        <?php while( has_sub_fields('schedule_year') ): ?>
+                  <!-- Toggle Link -->
+                  <h2 class="toggle-trigger"><?php the_field('sub_title'); ?> Schedule</h2>
+
+                  <!-- Toggle Content to display -->
+                  <div class="scheduleMain toggle-content">
+                  <?php while( has_sub_fields('schedule_year') ): ?>
                           <div class="scheduleDate">
                             <?php the_sub_field('schedule_date_'); ?>
                           </div>
-                          <?php while( has_sub_fields('schedule_details') ): ?>
-                            <div class="artistNameSchedule">
-                              <a href="<?php the_sub_field('artist_name_schedule_year'); ?>"> <?php the_sub_field('artist_name_schedue'); ?></a>
-                            </div>
-                            <div class="schedulePerformanceNam">
-                            <?php the_sub_field('performance_name_schedule'); ?>
-                            </div>
-                            <div class="scheduleVenue">
-                            <?php the_sub_field('performance_venue'); ?>
-                            </div>
-                            <div class="scheduleTime">
-                            <?php the_sub_field('performance_time'); ?>
-                            </div>
-                             
-
-
-
-
-                                
-                     <?php endwhile;//end of Schedule Details loop ?>
-                     <?php endwhile;//end of Schedule loop ?>
-                        
-
-                      </div>
-
-      
-                  </button>
-
-                  <button> <div class="additional">
-                      
-                      <?php while( has_sub_fields('additional_field') ): ?>
-                        <div class="additionalEach boxToggle">
-                        <div class="boxToggleHeader">
-                         <h2><?php the_sub_field('additional_field_title_title'); ?></h2>
-                         <div class="plusSign">
-                            <div class="line1"></div>
-                           <div class="line2"></div>
-                        </div>
-                        </div>
                           
-                          <?php the_sub_field('additional_field_text'); ?>
-                        </div>
-                      <?php endwhile;//end of additional loop ?>
-                      
-                    </div></button>
-                    <button> <div class="eyesEars boxToggle">
-                      <div class="boxToggleHeader">
-                         <h2>Festival Blog's Eyes and Ears</h2>
-                         <div class="plusSign">
-                            <div class="line1"></div>
-                           <div class="line2"></div>
-                        </div>
-                        </div>
-                      <?php while( has_sub_fields('festival_eyes_and_ears') ): ?>
+                          <?php while( has_sub_fields('schedule_details') ): ?>
+                            <div class="schedDetails">
+                              <div class="artistNameSchedule">
+                                <a href="<?php the_sub_field('artist_name_schedule_year'); ?>"> <?php the_sub_field('artist_name_schedue'); ?></a>
+                              </div>
+                              <div class="schedulePerformanceNam">
+                              <?php the_sub_field('performance_name_schedule'); ?>
+                              </div>
+                              <div class="scheduleVenue">
+                              <?php the_sub_field('performance_venue'); ?>
+                              </div>
+                              <div class="scheduleTime">
+                              <?php the_sub_field('performance_time'); ?>
+                              </div>
+                              </div>
+                              <?php endwhile;//end of Schedule Details loop ?>
+                              
+                     
+                        
+                  </div><!-- .toggle-content (end) -->
+                 </div><!-- .toggle (end) -->
+                    <?php endwhile;//end of Schedule loop ?>
+
+                    <!-- additional -->
+                    <?php while( has_sub_fields('additional_field') ): ?>
+                    <div class="toggle">
+
+                     <!-- Toggle Link -->
+                        <div class="additionalEach ">
+                         <h2 class="toggle-trigger"><?php the_sub_field('additional_field_title_title'); ?></h2>
+                     
+                     <!-- Toggle Content to display -->
+                     <div class="toggle-content">
+                        <?php the_sub_field('additional_field_text'); ?>
+                     </div><!-- .toggle-content (end) -->
+                   </div>
+                   
+                    </div><!-- .toggle (end) -->
+                    <?php endwhile;//end of additional loop ?>
+
+                <!-- Eyes and Ears -->
+                 <div class="toggle">
+
+                  <!-- Toggle Link -->
+                  <h2 class="toggle-trigger"> Festival Blog's Eyes and Ears</h2>
+
+                  <!-- Toggle Content to display -->
+                  <div class="toggle-content">
+                     <?php while( has_sub_fields('festival_eyes_and_ears') ): ?>
                         
                         <div class="eyesEarsName">
                          <?php the_sub_field('contributor_name'); ?>
                         </div>
-                       <div class="eyesEarsBio visHidden">   
+                       <div class="eyesEarsBio">   
                           <?php the_sub_field('contributor_bio'); ?>
                         </div>
                       <?php endwhile;//end of additional loop ?>
-                      
-                    </div></button>
+                  </div><!-- .toggle-content (end) -->
+                 </div><!-- .toggle (end) -->
+
                    <div class="catalog">
                      <?php 
                  
@@ -182,7 +171,7 @@
                  <div class="updates">
                    <h2>Festival Updates</h2>
                    <?
-                     $args = array( 'post_type' => 'festival_updates', 'posts_per_page' => 10 );
+                     $args = array( 'post_type' => 'festival_updates', 'posts_per_page' => 4 );
                      query_posts( $args ); // hijack the main loop
                      while ( have_posts() ) : the_post();
                        ?>
@@ -207,6 +196,10 @@
                      wp_reset_query();
                      ?> 
                    </div> 
+                   <div class="readmore">
+ 
+                       <a href="<?php echo get_permalink(146) ?>"><span class="meta-nav">&rarr;</span> More Updates</a>
+                     </div>
                  </div>
                </div>
              </div>
