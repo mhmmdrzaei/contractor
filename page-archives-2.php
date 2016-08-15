@@ -24,23 +24,20 @@ $terms = get_terms( 'animal_cat', array(
   <div class="content">
       <div class="artistArchiveToggle away">
         <?php $festivalArtistQueryQuery = new WP_Query(array(
-              'post_per_page' => -1, // if you want all its -1
               'post_type' => 'festival_artist',
               'orderby'=> 'title',
-              'order' => 'ASC'
+              'order' => 'ASC',
+              'posts_per_page' => -1
           )); ?>
           
 
         
           <?php if($festivalArtistQueryQuery-> have_posts()):?>
               <?php while($festivalArtistQueryQuery->have_posts()): ?>
-                <?php global $post; $category = get_the_category($post->ID); echo $category[0]->name; ?>
-
-                <?php echo category_description($category); ?>
                 <?php $festivalArtistQueryQuery->the_post(); ?>
-                 <?php $festivalArtistQueryQuery->the_content(); ?>
+                 
                   <div class="artistArchive">
-                    <p><a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
+                    <p><a href="<?php the_permalink(); ?>">
                     <?php the_title(); ?></a></p>
                   
                   </div>

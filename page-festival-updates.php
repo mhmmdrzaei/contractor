@@ -18,7 +18,7 @@
                  query_posts( $args ); // hijack the main loop
                  while ( have_posts() ) : the_post();
                    ?>
-               <div class="update">
+              
                  <div class="entry-date">
                  <? the_date(); ?>
                    
@@ -35,19 +35,17 @@
                   <?
                  endwhile;
                  ?>
-                 <?
+                 
+               
+               <?
                  wp_reset_query();
                  ?> 
-               </div> 
              </div>
             </div>
       </div>
-    </div> <!-- /,content -->
+    </div> <!-- /containr -->
 
 
-  </div> <!-- /.container -->
-</div> <!-- /.main-->
-</div>
 <?php get_footer(); ?>
 
 

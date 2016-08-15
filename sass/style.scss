@@ -565,6 +565,16 @@ button {
 	margin-bottom: 10px;
 		
 }
+.artistCaption{
+	font-family: $headfont;
+	@include fontSize(8);
+	color: grey;
+	text-align: right;
+
+}
+.artistArtistArtist {
+	padding-bottom: 40px;
+}
 
 /* Toggle Link text */
 .toggle .toggle-trigger {
