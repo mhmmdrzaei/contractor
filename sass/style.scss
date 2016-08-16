@@ -12,6 +12,8 @@
 @import 'comments';
 @import 'footer';
 @import 'navigation';
+@import 'hamburger';
+
 
 
 /*
@@ -140,8 +142,7 @@ header{
 		}
 	}
 	.search {
-		width: 26%;
-		margin-left: 12%;
+		width: 32%;
 		margin-bottom: 5px;
 		margin-top: -5px;
 		input {
@@ -167,6 +168,13 @@ header{
 		}
 		}
 	}
+}
+//hamburger menu
+.fuckyou {
+	display: none;
+}
+.fa-bars{
+	display: none;
 }
 
 // main page/single year 
@@ -226,7 +234,9 @@ button {
 	.scheduleMain {
 		background: white;
     	padding: 15px;
-    	margin-bottom: 12px;
+    	margin-bottom: 20px;
+    	align-content: space-between;
+
     	.performanceschedule{
     		color: #87000F;
     		text-align: center;
@@ -257,19 +267,25 @@ button {
     	.schedDetails {
     		display: flex;
     		@include fontSize(8);
-    		align-content: space-between;
     		border-bottom: 1px dashed black;
-    		margin-bottom: 3px;
+    		margin: 10px 0;
+    		padding-bottom: 10px;
+    		justify-content: space-between;
     	}
     	.artistNameSchedule {
     		font-family: $headfont;
+    		width: 25%;
+
 
     	}
     	.scheduleTime {
-			width: 10%;
+			width: 15%;
     	}
     	.scheduleVenue {
-    		width: 30%;
+    		width: 25%;
+    	}
+    	.schedulePerformanceNam {
+    		width: 25%;
     	}
 
 
@@ -424,7 +440,7 @@ button {
 //Archives
 .archivesToggle {
 	display: flex;
-	padding:35px 0 10px 0;
+	padding:35px 10px 10px;
 
 	h3 {
 		width: 30%;
@@ -658,3 +674,210 @@ button {
     }
     
 	}
+	.dropdown {
+		display: none;
+	}
+
+	// Media Quaries 
+	@media(max-width: 952px){
+
+		footer .footer h4 {
+		    width: 35%;
+		}
+	}
+	@media(max-width: 730px){
+
+		footer .footer h4 {
+		    width: 25%;
+		}
+		//headerMenu
+		header {
+			border-bottom: none;
+			ul.menu {
+				display: block;
+				width: 100%;
+				margin: 0 auto;
+				li {
+					width: 20%;
+					margin: 5% auto;
+					display: block;
+					a {
+							&:hover {
+								background: none;
+								color:black;
+						    	}
+					}
+				}
+			}
+
+		}
+
+		.headerMenu {
+			display: none;
+			.search {
+			width: 60%;
+			margin: 0 auto;
+			padding-bottom: 40px;
+			input {
+			width: 70%;
+			}
+			li{
+			width: 100%;
+			margin: 0 auto;
+			}
+
+		}
+
+
+		}
+		.fuckyou {
+			display: block;
+
+		}
+
+
+
+		.dropdown {
+				display: none;
+				position: fixed;
+				width: 100%;
+			    opacity: .9;
+			    display: block;
+			    background: #efefef;
+			    z-index: 99;
+			    margin: 10px 0;
+			    top: 0;
+			    padding: 60px 0;
+			    border: 5px solid #87000F;
+		    	// z-index: 101;
+		    	img {
+		    		display: none;
+		    		animation: none;
+		    	}
+		}
+		.fa-bars {
+		display: block;
+		height: 67px;
+		padding: 13px 10px;
+		color: #FEF800;
+		position: fixed;
+		top: 10px;
+		z-index: 100;
+
+
+		}
+		.bx-wrapper .bx-controls-direction a {
+			z-index: 98;
+		}
+// main fest year
+		.yearComplete {
+			display: block;
+			.yearSide {
+				padding: 5%;
+				width: 100%;
+				.poster {
+					display: none;
+				}
+			}
+			.yearMain {
+				width: 100%;
+				padding: 5%;
+			}
+
+		}
+		.updates a {
+			left:0;
+			width: 100%;
+		}
+		.schedDetails {
+			flex-wrap: wrap;
+			.artistNameSchedule {
+			    width: 100%;
+			    padding-bottom: 5px;
+			}
+
+		}
+//about Page 
+		.aboutComplete{
+			display: block;
+			.aboutSide {
+				padding: 5%;
+				width: 100%;
+				
+			}
+			.aboutMain {
+				width: 100%;
+				padding: 5%;
+			}
+		}
+//artist single page
+		.artistComplete, .contentSearch, .contentblog{
+			display: block;
+			.artistTitle, .searchTitle, .sidebarblog {
+				padding: 5%;
+				width: 100%;
+				
+			}
+			.artistMainMain, .searchResults, .blogblog {
+				width: 100%;
+				padding: 5%;
+			}
+		}
+
+	}
+@media(max-width: 690px){
+	.artistComplete, .contentSearch, .contentblog, .aboutComplete, .yearComplete {
+		margin-bottom: 80px;
+	}
+	footer {
+		border-top: none;
+	}
+	.footer {
+
+		flex-wrap: wrap;
+	    position: fixed;
+	    left: 0px;
+	    bottom: 0px;
+	    padding-bottom: 13px;
+	    height: 90px;
+	    width: 100%;
+	    background: white;
+	    border-top: 3px solid #87000F;
+	    nav {
+	    	margin: 0 auto;
+	    	padding-bottom: 10px;
+	    	ul {
+	    		flex-wrap: wrap; 
+	    	}
+	    }
+	}
+	footer .footer h4 {
+		    display: none;
+		}
+//archives page
+	.archivesToggle{
+		flex-wrap: wrap; 
+		h3 {
+			width: 100%;
+		}
+		.archivesArtistList{
+			width: 35%;
+		}
+	}
+
+}
+@media(max-width: 500px){
+	.yearArchiveToggle, .artistArchiveToggle  {
+		margin-bottom: 80px;
+		.yearArchive {
+			width: 100%;
+			padding: 5%;
+			margin: 20px 0;
+		}
+		
+	}
+	.artistArchive {
+			width: 100%;
+			text-align: center;
+		}
+}

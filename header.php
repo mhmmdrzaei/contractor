@@ -19,15 +19,29 @@
 <header>
 
   <div class="container">
+  <div class="fuckyou" id="">
+       <div class="fa fa-bars " title="menu">
+        <div id="nav-icon4">
+         <span></span>
+         <span></span>
+         <span></span>
+       </div>
+       </div>
 
-   <div class="headerMenu"> <?php wp_nav_menu( array(
+       
+     </div>
+
+   <div class="headerMenu headerHeaderMenu" id="dropdownn"> 
+
+    <?php wp_nav_menu( array(
        'container' => false,
        'theme_location' => 'primary'
      )); ?>
       <div class="search">
        <?php  dynamic_sidebar( 'primary-widget-area' ); ?>
          
-       </div</div>
+       </div>
+    </div>
 
   </div> <!-- /.container -->
 </header><!--/.header-->

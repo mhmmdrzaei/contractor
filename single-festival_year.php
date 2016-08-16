@@ -77,16 +77,17 @@
                   <h2 class="toggle-trigger"><?php the_field('sub_title'); ?> Schedule</h2>
 
                   <!-- Toggle Content to display -->
-                  <div class="scheduleMain toggle-content">
                   <?php while( has_sub_fields('schedule_year') ): ?>
+                  <div class="scheduleMain toggle-content">
+                  
                           <div class="scheduleDate">
                             <?php the_sub_field('schedule_date_'); ?>
                           </div>
-                          
+        
                           <?php while( has_sub_fields('schedule_details') ): ?>
                             <div class="schedDetails">
                               <div class="artistNameSchedule">
-                                <a href="<?php the_sub_field('artist_name_schedule_year'); ?>"> <?php the_sub_field('artist_name_schedue'); ?></a>
+                                 <?php the_sub_field('artist_name_schedue'); ?>
                               </div>
                               <div class="schedulePerformanceNam">
                               <?php the_sub_field('performance_name_schedule'); ?>
@@ -97,14 +98,13 @@
                               <div class="scheduleTime">
                               <?php the_sub_field('performance_time'); ?>
                               </div>
-                              </div>
+                            </div>
                               <?php endwhile;//end of Schedule Details loop ?>
-                              
-                     
-                        
+ 
                   </div><!-- .toggle-content (end) -->
+                   <?php endwhile;//end of Schedule loop ?>
                  </div><!-- .toggle (end) -->
-                    <?php endwhile;//end of Schedule loop ?>
+                   
                     <!-- additional -->
                     <?php while( has_sub_fields('additional_field') ): ?>
                     <div class="toggle">

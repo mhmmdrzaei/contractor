@@ -31,24 +31,38 @@
 
 
 
+//dropdown menu 
+
+	$('.fuckyou').click(function(){
+			$('#nav-icon4').toggleClass('open');
+
+				$(".headerMenu").toggleClass('dropdown');
+				// $('.borderWhite').toggle();
+				// $(".fa-bars").toggleClass('fa-borderss');
+				$(".headerMenu a").on("click", function(){
+				// console.log('fuckyou');
+				$(".headerMenu").hide();
 
 
-	// $('button').on('click', function() {
+				$("hamburger").hover(function() {
+				    $(this).css("cursor", "pointer");
+				}, function() {
+				    $(this).css("", "");
+				});
 
-	// 	var line = $(this).find('.line2');
-	// 	line.toggleClass('visHidden');
-		
-	// 	$('button').not(this).next('.boxToggleHeader').slideUp('toggleInfo');
-	// 	 $(this).next('.boxToggleHeader').slideToggle('toggleInfo');
+			});	
 
+		});
+	$(".headerMenu a").on("click", function(){
+			$('#nav-icon4').toggleClass('open');
+		setTimeout(function() {
+			$(".fa-bars").removeClass('fa-borderss');
+			// $(".fa-bars").addClass('hamburger');
 
-	// 	var body = $('.boxToggleHeader').next();
+			
+		});	
 
-	// 	body.slideToggle('toggleInfo');
-		
-	// 	// $('.artistMain').toggleClass('toggleInfo');
-
-	// });
+		});
 
 //Archives Page
 	$('.archivesArtistList').on('click', function() {
