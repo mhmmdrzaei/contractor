@@ -697,6 +697,8 @@ button {
 				display: block;
 				width: 100%;
 				margin: 0 auto;
+				@include fontSize(15);
+				text-align: center;
 				li {
 					width: 20%;
 					margin: 5% auto;
@@ -718,6 +720,8 @@ button {
 			width: 60%;
 			margin: 0 auto;
 			padding-bottom: 40px;
+			position: relative;
+			left: 20px;
 			input {
 			width: 70%;
 			}
@@ -741,9 +745,8 @@ button {
 				display: none;
 				position: fixed;
 				width: 100%;
-			    opacity: .9;
 			    display: block;
-			    background: #efefef;
+			    background: #f1f1f1;
 			    z-index: 99;
 			    margin: 10px 0;
 			    top: 0;

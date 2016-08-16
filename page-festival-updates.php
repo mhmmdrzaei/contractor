@@ -12,7 +12,6 @@
           
         <div class="blogblog">
             <div class="updates">
-               <h2>Festival Updates</h2>
                <?
                  $args = array( 'post_type' => 'festival_updates', 'posts_per_page' => -1 );
                  query_posts( $args ); // hijack the main loop
