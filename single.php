@@ -2,7 +2,7 @@
 
 <div class="main">
   <div class="container">
-    <div class="content single">
+    <div class="content single singleUpdates">
     <div id="nav-below" class="navigation">
           <p class="nav-previous"><?php previous_post_link('%link', '&larr; %title'); ?></p>
           <p class="nav-next"><?php next_post_link('%link', '%title &rarr;'); ?></p>
@@ -13,7 +13,7 @@
           <h2 class="entry-title"><?php the_title(); ?></h2>
 
           <div class="entry-meta">
-          <?php hackeryou_posted_on(); ?>
+          <!-- <?php hackeryou_posted_on(); ?> -->
           </div><!-- .entry-meta -->
 
           <div class="entry-content">
