@@ -25,142 +25,153 @@
                 <div class="yearSide">
                <h3><?php the_field('sub_title'); ?> </h3>
                  <div class="contentWelcome">
-                   <h2>Welcome</h2>
                    <?php the_content(); ?>
                  </div>
                  <div class="poster">
-                   <h2>Poster</h2>
+
                      <?php 
                    
                      $image = get_field('poster');
                    
                      if( !empty($image) ): ?>
+
+                       <!-- Trigger the Modal -->
                    
-                       <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                       <img id="myImg" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+                       <!-- The Modal -->
+                       <div id="myModal" class="modal">
+
+                         <!-- The Close Button -->
+                         <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+                         <!-- Modal Content (The Image) -->
+                         <img class="modal-content" id="img01">
+
+                         <!-- Modal Caption (Image Text) -->
+                         <div id="caption"></div>
+                       </div>
                    
                      <?php endif; ?>
                    </div>
                </div>
                <div class="yearMain">
-                 <?php if( have_rows('gallery_slider') ) : ?>
-                     <ul class="bxslider">
-                         <?php while( have_rows('gallery_slider') ) : the_row(); ?>
-                             <li>
-                                 <?php $image = get_sub_field('image_slider_year');
-                                     if( !empty($image) ): ?>
-                                         <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-                                     <?php endif; ?>
-                             </li>
-                         <?php endwhile; ?>
-                     </ul><!-- .bxslider -->
-                 <?php endif;  // end gallery repeater field?>
+               <?php if( have_rows('gallery_slider') ) : ?>
+                                    <ul class="bxslider">
+                                        <?php while( have_rows('gallery_slider') ) : the_row(); ?>
+                                            <li>
+                                                <?php $image = get_sub_field('image_slider_year');
+                                                    if( !empty($image) ): ?>
+                                                        <a href="<?php the_sub_field('artist_page_with_image'); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /></a>
+                                                   
+                                                    <?php endif; ?>
+                                            </li>
+                                        <?php endwhile; ?>
+                                    </ul><!-- .bxslider -->
+                                <?php endif;  // end gallery repeater field?>
+                                <!-- Artists -->
+                                <?php if( has_sub_fields('artists_festival_year') ): ?>
+
+                                <div class="toggle">
+                                <h2 class="toggle-trigger">Artists</h2>
+
+                                 <div class="artistMain toggle-content">
+                                <?php while( has_sub_fields('artists_festival_year') ): ?>
+
+                                   
+                                        <a href="<?php the_sub_field('artist_page_year_link'); ?>"> <?php the_sub_field('artist_name_year_select'); ?></a> // 
+                                                 
+                                  <?php endwhile;//end of Artist Name loop ?>    
+                                   </div><!-- .toggle-content (end) -->
+                                   
+                                   
+                                   
+                                 
+                                </div><!-- .toggle (end) -->
+                              <?php endif; ?>
+
+ <!-- Schedule -->
+               <?php if( has_sub_fields('schedule_year') ): ?>
+                <div class="toggle">
+
+                 <!-- Toggle Link -->
+                 <h2 class="toggle-trigger"> Schedule</h2>
+
+                 <!-- Toggle Content to display -->
+                 <?php while( has_sub_fields('schedule_year') ): ?>
+                 <div class="scheduleMain toggle-content">
                  
-                 <!-- Artists -->
-                 <div class="toggle">
+                         <div class="scheduleDate">
+                           <?php the_sub_field('schedule_date_'); ?>
+                         </div>
+       
+                         <?php while( has_sub_fields('schedule_details') ): ?>
+                           <div class="schedDetails">
+                             <div class="artistNameSchedule">
+                             <a href=" <?php the_sub_field('artist_name_link_scheudle'); ?>"><?php the_sub_field('artist_name_schedue'); ?></a>
+                             </div>
+                             <div class="schedulePerformanceNam">
+                             <?php the_sub_field('performance_name_schedule'); ?>
+                             </div>
+                             <div class="scheduleVenue">
+                             <?php the_sub_field('performance_venue'); ?>
+                             </div>
+                             <div class="scheduleTime">
+                             <?php the_sub_field('performance_time'); ?>
+                             </div>
+                           </div>
+                             <?php endwhile;//end of Schedule Details loop ?>
 
-                  <!-- Toggle Link -->
-                  <h2 class="toggle-trigger"><?php the_field('sub_title'); ?> Artists</h2>
+                 </div><!-- .toggle-content (end) -->
+                  <?php endwhile;//end of Schedule loop ?>
+                </div><!-- .toggle (end) -->
+                <?php endif; ?>
 
-                  <!-- Toggle Content to display -->
-                  <div class="artistMain toggle-content">
-                     <?php while( has_sub_fields('artists_festival_year') ): ?>
-                       <a href="<?php the_sub_field('artist_page_year_link'); ?>"> <?php the_sub_field('artist_name_year_select'); ?></a> // 
-                                
-                     <?php endwhile;//end of Artist Name loop ?>
-                  </div><!-- .toggle-content (end) -->
-                 </div><!-- .toggle (end) -->
 
-                 <!-- Schedule -->
-                 <div class="toggle">
+                   <!-- additional -->
+                   <?php while( has_sub_fields('additional_field') ): ?>
+                   <div class="toggle">
 
-                  <!-- Toggle Link -->
-                  <h2 class="toggle-trigger"><?php the_field('sub_title'); ?> Schedule</h2>
-
-                  <!-- Toggle Content to display -->
-                  <?php while( has_sub_fields('schedule_year') ): ?>
-                  <div class="scheduleMain toggle-content">
+                    <!-- Toggle Link -->
+                       <div class="additionalEach ">
+                        <h2 class="toggle-trigger"><?php the_sub_field('additional_field_title_title'); ?></h2>
+                    
+                    <!-- Toggle Content to display -->
+                    <div class="toggle-content">
+                       <?php the_sub_field('additional_field_text'); ?>
+                    </div><!-- .toggle-content (end) -->
+                  </div>
                   
-                          <div class="scheduleDate">
-                            <?php the_sub_field('schedule_date_'); ?>
-                          </div>
-        
-                          <?php while( has_sub_fields('schedule_details') ): ?>
-                            <div class="schedDetails">
-                              <div class="artistNameSchedule">
-                                 <?php the_sub_field('artist_name_schedue'); ?>
-                              </div>
-                              <div class="schedulePerformanceNam">
-                              <?php the_sub_field('performance_name_schedule'); ?>
-                              </div>
-                              <div class="scheduleVenue">
-                              <?php the_sub_field('performance_venue'); ?>
-                              </div>
-                              <div class="scheduleTime">
-                              <?php the_sub_field('performance_time'); ?>
-                              </div>
-                            </div>
-                              <?php endwhile;//end of Schedule Details loop ?>
- 
-                  </div><!-- .toggle-content (end) -->
-                   <?php endwhile;//end of Schedule loop ?>
-                 </div><!-- .toggle (end) -->
-                   
-                    <!-- additional -->
-                    <?php while( has_sub_fields('additional_field') ): ?>
-                    <div class="toggle">
-
-                     <!-- Toggle Link -->
-                        <div class="additionalEach ">
-                         <h2 class="toggle-trigger"><?php the_sub_field('additional_field_title_title'); ?></h2>
-                     
-                     <!-- Toggle Content to display -->
-                     <div class="toggle-content">
-                        <?php the_sub_field('additional_field_text'); ?>
-                     </div><!-- .toggle-content (end) -->
-                   </div>
-                   
-                    </div><!-- .toggle (end) -->
-                    <?php endwhile;//end of additional loop ?>
-
-                <!-- Eyes and Ears -->
-                 <div class="toggle">
-
-                  <!-- Toggle Link -->
-                  <h2 class="toggle-trigger"> Festival Blog's Eyes and Ears</h2>
-
-                  <!-- Toggle Content to display -->
-                  <div class="toggle-content">
-                     <?php while( has_sub_fields('festival_eyes_and_ears') ): ?>
-                        
-                        <div class="eyesEarsName">
-                         <?php the_sub_field('contributor_name'); ?>
-                        </div>
-                       <div class="eyesEarsBio">   
-                          <?php the_sub_field('contributor_bio'); ?>
-                        </div>
-                      <?php endwhile;//end of additional loop ?>
-                  </div><!-- .toggle-content (end) -->
-                 </div><!-- .toggle (end) -->
+                   </div><!-- .toggle (end) -->
+                   <?php endwhile;//end of additional loop ?>
+                 <?php while( has_sub_fields('promo_mat_upload') ): ?>
                    <div class="catalog">
+                   
                      <?php 
                  
-                     $file = get_field('catalog');
+                     $file = get_sub_field('catalog');
                  
                      if( $file ): ?>
                        
-                       <a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?>Download This Years' Promotional Material (PDF)</a>
+                       <a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?><?php the_sub_field('promo_material_download_link_text'); ?></a>
                  
                      <?php endif; ?>
+                   
                      </div>
+                   <?php endwhile;//end of Promo Material ?>
 
                      <div class="sponsors">
-                       <h4>7a*11d and its presenting partners gratefully acknowledge the support of:</h4>
+                       <div class="sponsors">
+                     <?php while( has_sub_fields('presenting_partners') ): ?>
+                      <h4><?php the_sub_field('presenting_partners_title'); ?></h4>
+                          <?php while( has_sub_fields('logo_images_logo') ): ?>
                        
-                       <?php while( has_sub_fields('presenting_partners') ): ?>
                            <?php $imageLogo = get_sub_field('logo_image_logo') ?> 
-                             <img src="<?php echo $imageLogo['sizes']['large'] ?>" alt="">        
-                         <?php endwhile;//image loop ?>
-                                              </div>
+                           <a href="<?php the_sub_field('logo_link'); ?>"><img src="<?php echo $imageLogo['sizes']['large'] ?>" alt=""></a>
+                              
+                          <?php endwhile;//end of logo images loop ?>       
+                         <?php endwhile;// end of presenting partners loop loop ?>
+                      </div>
     </div>
 
           

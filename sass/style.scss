@@ -13,6 +13,7 @@
 @import 'footer';
 @import 'navigation';
 @import 'hamburger';
+@import 'modal';
 
 
 
@@ -91,7 +92,8 @@ img {
 }
 
 body {
-	background: #fff url('images/bg.gif') no-repeat top left;
+	background: #fff url('images/bg.gif') top left no-repeat;
+	background-attachment:fixed;
 	color: #333;
 	font-family: $bodyfont;
 }
@@ -127,7 +129,7 @@ header{
 		    width: 60%;
 		
 		li{
-			margin: 0 50px 0 0;
+			margin: 0 15px 0 0;
 		 	a {
 		 		background: none;
 		 		color: black;
@@ -192,10 +194,20 @@ header{
 	h3 {
 		padding: 35px 0;
 	}
-	h2 {
-		border-bottom: 3px solid #87000F;
-		padding-bottom: 5px;
+	.poster, .contentWelcome{
+		border-top: 3px solid #87000F;
+
 	}
+	.poster {
+		padding-top: 25px;
+		margin-top: 25px;
+		
+	}
+	#myModal {
+		z-index: 99;
+	}
+
+
 }
 .yearMain{
 	width: 70%;
@@ -393,8 +405,7 @@ button {
 	    margin-bottom: 40px;
 	img {
 		margin: 5px;
-		width: 19%;
-		max-height: 45px;
+		max-height: 40px;
 	}
 }
 
@@ -678,6 +689,9 @@ button {
 	.dropdown {
 		display: none;
 	}
+	.bx-wrapper .bx-controls-direction a {
+			z-index: 98;
+		}
 
 	// Media Quaries 
 	@media(max-width: 952px){
@@ -703,8 +717,8 @@ button {
 				@include fontSize(15);
 				text-align: center;
 				li {
-					width: 20%;
-					margin: 5% auto;
+					
+					margin: 5%;
 					display: block;
 					a {
 							&:hover {
@@ -772,9 +786,7 @@ button {
 
 
 		}
-		.bx-wrapper .bx-controls-direction a {
-			z-index: 98;
-		}
+		
 // main fest year
 		.yearComplete {
 			display: block;

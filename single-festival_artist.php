@@ -32,11 +32,25 @@
                    <?php while( has_sub_fields('visual_work') ): ?>
                   <div class="artistArtistArtist toggle">
                     <div class="boxToggleHeader">
-                         <h2><?php the_sub_field('year_of_programming_artist_artist'); ?> Programming</h2>
+                         <h2><?php the_sub_field('year_of_programming_artist_artist'); ?></h2>
                     </div>
                   
                     <?php $image = get_sub_field('artist_picture') ?> 
-                    <img src="<?php echo $image['sizes']['large'] ?>" alt="">
+
+                    <img id="myImg"  src="<?php echo $image['sizes']['large'] ?>" alt="">
+                    <!-- Trigger the Modal -->
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                      <!-- The Close Button -->
+                      <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+                      <!-- Modal Content (The Image) -->
+                      <img class="modal-content" id="img01">
+
+                      <!-- Modal Caption (Image Text) -->
+                      <div id="caption"></div>
+                      </div>
                     <p class="artistCaption"><?php the_sub_field('artist_caption'); ?></p>
 
                     <div class="schedule">

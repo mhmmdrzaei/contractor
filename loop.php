@@ -23,6 +23,9 @@
         </a>
       </h2>
 			<p><?php the_date('F j Y'); ?></p>
+			<?php $author = get_the_author(); ?> 
+			<p>Written By <?php echo $author ?></p>
+			
 			<section class="entry-content">
 				<?php the_content('Continue reading <span class="meta-nav">&rarr;</span>'); ?>
 				<?php wp_link_pages( array(

@@ -13,6 +13,7 @@
         
         
             <div class="blogblog">
+                
                 <?php get_template_part( 'loop', 'index' );  ?>
             </div> <!--/.content -->
       </div>
