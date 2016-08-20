@@ -66,7 +66,7 @@
 		});
 
 //Archives Page
-	$('.archivesArtistList').on('click', function() {
+	$('.archivesArtistList').on('click', function(event) {
 		event.preventDefault();
 		$('.artistArchiveToggle').removeClass('away');
 
@@ -81,7 +81,7 @@
 
 	});
 
-	$('.archivesYearList').on('click', function() {
+	$('.archivesYearList').on('click', function(event) {
 		event.preventDefault();
 		$('.artistArchiveToggle').addClass('away');
 
