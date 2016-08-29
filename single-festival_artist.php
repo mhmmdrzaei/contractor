@@ -83,6 +83,7 @@
                         <div class="embed-container">
                           <?php the_sub_field('vimeo_embedded_link'); ?>
                         </div>
+                        <p class="artistCaption"><?php the_sub_field('vimeo_text'); ?></p>
                         <?php endwhile;//end of vimeo ?>
 
                     </div>

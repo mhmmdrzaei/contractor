@@ -22,7 +22,7 @@ $terms = get_terms( 'animal_cat', array(
   </div>
 
   <div class="content">
-      <div class="artistArchiveToggle away">
+      <div class="artistArchiveToggle fartsnatcher away">
         <?php $festivalArtistQueryQuery = new WP_Query(array(
               'post_type' => 'festival_artist',
               'orderby'=> 'title',
@@ -32,20 +32,25 @@ $terms = get_terms( 'animal_cat', array(
           
 
         
-          <?php if($festivalArtistQueryQuery-> have_posts()):?>
-              <?php while($festivalArtistQueryQuery->have_posts()): ?>
-                <?php $festivalArtistQueryQuery->the_post(); ?>
-                 
-                  <div class="artistArchive">
-                    <p><a href="<?php the_permalink(); ?>">
-                    <?php the_title(); ?></a></p>
-                  
-                  </div>
-                    <?php endwhile; ?>
-                        <?php wp_reset_postdata(); ?> 
-                        <!-- this will end the and reset and go back to normal so you can go back to normal to your page -->
-                    <?php endif; ?>
-        </div>  
+          <div id="data" class="Column1">
+            <?php if($festivalArtistQueryQuery-> have_posts()):?>
+                <?php while($festivalArtistQueryQuery->have_posts()): ?>
+                  <?php $festivalArtistQueryQuery->the_post(); ?>
+                   
+                    
+                      <p><a href="<?php the_permalink(); ?>">
+                      <?php the_title(); ?></a></p>
+                    
+                    
+            
+                      <?php endwhile; ?>
+                          <?php wp_reset_postdata(); ?> 
+                          <!-- this will end the and reset and go back to normal so you can go back to normal to your page -->
+                      <?php endif; ?>
+          </div>
+          <div id="Column2"></div>
+        </div> 
+
       <div class="yearArchiveToggle">
       <?php
       // now run a query for each animal family

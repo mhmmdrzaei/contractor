@@ -6,7 +6,7 @@
   <div class="container">
       <div class="contentblog">
         <div class="sidebarblog">
-          <h3>Festival Updates</h3>
+          <h3>News & Updates</h3>
         
           </div>
           

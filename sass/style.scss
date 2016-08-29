@@ -126,7 +126,7 @@ header{
 	display: flex;
 	margin-top: 110px;
 	ul{
-		    width: 60%;
+		    width: 75%;
 		
 		li{
 			margin: 0 15px 0 0;
@@ -471,9 +471,9 @@ button {
 	padding: 3%;
 
 }
-.artistArchive {
+#data, #Column2 {
 	width: 50%;
-	p {
+	p{
 		margin: 0;
 	}
 }
@@ -700,7 +700,7 @@ button {
 		    width: 35%;
 		}
 	}
-	@media(max-width: 730px){
+	@media(max-width: 742px){
 
 		footer .footer h4 {
 		    width: 25%;
@@ -855,6 +855,16 @@ button {
 	footer {
 		border-top: none;
 	}
+	#data, #Column2 {
+		width: 100%;
+		margin: 0 auto;
+		
+	}
+	#Column2{
+		margin-bottom: 100px;
+	}
+
+
 	.footer {
 
 		flex-wrap: wrap;

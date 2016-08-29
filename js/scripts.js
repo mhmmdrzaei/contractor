@@ -29,7 +29,13 @@
 		}
 		return false;
 	});
-
+//artist two columns
+    var size = $("#data > p").size();
+ $(".Column1 > p").each(function(index){
+  if (index >= size/2){
+   $(this).appendTo("#Column2");
+  }
+ });
 
 
 //dropdown menu 
