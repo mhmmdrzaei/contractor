@@ -149,7 +149,7 @@ add_filter( 'excerpt_length', 'hackeryou_excerpt_length' );
  * Returns a "Continue Reading" link for excerpts
  */
 function hackeryou_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">Continue reading <span class="meta-nav">&rarr;</span></a>';
+	return ' <a class="continueExcerpt" href="'. get_permalink() . '">Continue reading <span class="meta-nav">&rarr;</span></a>';
 }
 // for links in exceprts
 function hackeryou_excerpt_more( $more ) {

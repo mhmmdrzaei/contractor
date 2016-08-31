@@ -336,7 +336,7 @@ button {
 		h4{
 			margin: 10px 0;
 		}
-		a {
+		a.continueExcerpt {
 			display: block;
 			margin: 10px 0;
 			position: relative;
@@ -425,6 +425,8 @@ button {
 
 	}
 	.tagcloud {
+		display: flex;
+		flex-wrap: wrap;
 		
 		a {
 			color:#87000F;
@@ -788,6 +790,7 @@ button {
 		}
 		
 // main fest year
+
 		.yearComplete {
 			display: block;
 			.yearSide {
@@ -803,9 +806,12 @@ button {
 			}
 
 		}
-		.updates a {
+
+		.updates  {
+			a.continueExcerpt{
 			left:0;
 			width: 100%;
+		}
 		}
 		.schedDetails {
 			flex-wrap: wrap;
@@ -829,14 +835,14 @@ button {
 			}
 		}
 //artist single page
-		.artistComplete, .contentSearch, .contentblog{
+		.artistComplete, .contentSearch, .contentblog, .contentTag{
 			display: block;
-			.artistTitle, .searchTitle, .sidebarblog {
+			.artistTitle, .searchTitle, .sidebarblog, .tagTitle {
 				padding: 5%;
 				width: 100%;
 				
 			}
-			.artistMainMain, .searchResults, .blogblog {
+			.artistMainMain, .searchResults, .blogblog, .tagResults {
 				width: 100%;
 				padding: 5%;
 			}
@@ -849,7 +855,8 @@ button {
 
 	}
 @media(max-width: 690px){
-	.artistComplete, .contentSearch, .contentblog, .aboutComplete, .yearComplete {
+
+	.artistComplete, .contentSearch, .contentblog, .aboutComplete, .yearComplete, .contentTag {
 		margin-bottom: 80px;
 	}
 	footer {
@@ -866,7 +873,7 @@ button {
 
 
 	.footer {
-
+		z-index: 99;
 		flex-wrap: wrap;
 	    position: fixed;
 	    left: 0px;
