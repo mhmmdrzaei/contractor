@@ -37,7 +37,7 @@
                   
                     <?php $image = get_sub_field('artist_picture') ?> 
 
-                    <img id="myImg"  src="<?php echo $image['sizes']['large'] ?>" alt="">
+                    <img id="myImg" class="imageClass" src="<?php echo $image['sizes']['large'] ?>" alt="">
                     <!-- Trigger the Modal -->
                     <!-- The Modal -->
                     <div id="myModal" class="modal">

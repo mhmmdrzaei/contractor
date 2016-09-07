@@ -548,6 +548,7 @@ button {
 	}
 	.searchResults {
 		width: 70%;
+		min-height: 450px;
 		
 	}
 }
@@ -920,4 +921,10 @@ button {
 			width: 100%;
 			text-align: center;
 		}
+}
+// nothing found styling
+.sorry {
+	min-height: 300px;
+	margin: 5%;
+
 }

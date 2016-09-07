@@ -115,6 +115,20 @@
 	    modalImg.alt = this.alt;
 	    captionText.innerHTML = this.alt;
 	}
+// for the artist page images //
+var images = document.getElementsByClassName("imageClass");
+for(var i = 0; i < images.length; i++){
+    var img = images[i];
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        modalImg.alt = this.alt;
+        captionText.innerHTML = this.alt;
+    }
+}
+
 
 	// Get the <span> element that closes the modal
 	var span = document.getElementsByClassName("close")[0];
