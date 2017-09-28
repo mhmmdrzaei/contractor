@@ -66,6 +66,8 @@
                          <?php endwhile; ?>
                      </ul><!-- .bxslider -->
                  <?php endif;  // end gallery repeater field?>
+                 <!-- instagram -->
+                 <? the_field('instagram_feed'); ?>
                  <!-- Artists -->
                  <?php if( has_sub_fields('artists_festival_year') ): ?>
 
@@ -201,9 +203,7 @@
                      <h4><? the_title(); ?></h4>
                      <div class="entry-content">
                        <?
-                       global $more;    // Declare global $more (before the loop).
-                       $more = 1;       // Set (inside the loop) to display all content, including text below more.
-                       the_excerpt();
+                       get_the_excerpt();
                        ?>
                      </div>
                       <?

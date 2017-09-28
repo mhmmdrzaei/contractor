@@ -69,6 +69,8 @@
                                         <?php endwhile; ?>
                                     </ul><!-- .bxslider -->
                                 <?php endif;  // end gallery repeater field?>
+                                <!-- instagram -->
+                                <? the_field('instagram_feed'); ?>
                                 <!-- Artists -->
                                 <?php if( has_sub_fields('artists_festival_year') ): ?>
 
