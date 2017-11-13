@@ -147,6 +147,7 @@
                     </div><!-- .toggle (end) -->
                     <?php endwhile;//end of additional loop ?>
 
+
                   <?php while( has_sub_fields('promo_mat_upload') ): ?>
                    <div class="catalog">
                    
@@ -163,7 +164,23 @@
                      </div>
                    <?php endwhile;//end of Promo Material ?>
 
-                  
+                   <!-- additional Programming -->
+                     <?php while( has_sub_fields('additional_progamming') ): ?>
+                       
+                     <div class="otherProjects">
+                     
+                         <div class="additionalProgEach ">
+                          <h2 class="additional_prog_header"><?php the_sub_field('additional_prog_title'); ?></h2>
+                      
+                      <!-- Toggle Content to display -->
+                      
+                         <?php the_sub_field('additional_prog_text'); ?> 
+                    </div>
+
+                    </div>
+                    
+                     
+                     <?php endwhile;//end of additional Programming loop ?>
                       
                      <div class="sponsors">
                      <?php while( has_sub_fields('presenting_partners') ): ?>
@@ -190,7 +207,7 @@
                  <div class="updates">
                    <h2>News & Updates</h2>
                    <?
-                     $args = array( 'post_type' => 'festival_updates', 'posts_per_page' => 4 );
+                     $args = array( 'post_type' => 'festival_updates', 'order' => 'DESC', 'posts_per_page' => 4 );
                      query_posts( $args ); // hijack the main loop
                      while ( have_posts() ) : the_post();
                        ?>

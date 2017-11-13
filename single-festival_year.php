@@ -161,6 +161,24 @@
                    
                      </div>
                    <?php endwhile;//end of Promo Material ?>
+                     <!-- additional Programming -->
+                     <?php while( has_sub_fields('additional_progamming') ): ?>
+                       
+                     <div class="otherProjects">
+                     
+                         <div class="additionalProgEach ">
+                          <h2 class="additional_prog_header"><?php the_sub_field('additional_prog_title'); ?></h2>
+                      
+                      <!-- Toggle Content to display -->
+                      
+                         <?php the_sub_field('additional_prog_text'); ?> 
+                    </div>
+
+                    </div>
+                    
+                     
+                     <?php endwhile;//end of additional Programming loop ?>
+
 
                      <div class="sponsors">
                        <div class="sponsors">

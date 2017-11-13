@@ -215,6 +215,26 @@ header{
 	width: 70%;
 	padding: 7%;
 }
+//additional Programming 
+
+.additional_prog_header {
+			border-bottom: 3px solid #87000F;
+			padding: 10px 0;
+			margin-top: 25px;
+		}
+
+		.otherProjects {
+			border-bottom: 3px solid #87000F;
+			padding: 10px 0;
+
+		}
+
+		.additionalProgEach {
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
 
 // boxslider
 ul.bxslider {
@@ -329,7 +349,7 @@ button {
 	.updates {
 		h2 {
 			border-bottom: 3px solid #87000F;
-			padding: 10px;
+			padding: 10px 0;
 			margin-top: 25px;
 		}
 		.entry-date{
