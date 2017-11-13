@@ -200,7 +200,7 @@
                        
                  
                      </div> <? /* */  ?>
-                     <h4><? the_title(); ?></h4>
+                    <a href="<? the_permalink(); ?>"><h4><? the_title(); ?></h4></a>
                      <div class="entry-content">
                        <?
                        get_the_excerpt();

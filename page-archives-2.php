@@ -3,7 +3,7 @@
 <?php //start by fetching the terms for the animal_cat taxonomy
 $terms = get_terms( 'animal_cat', array(
     'orderby'    => 'name',
-    'order' => 'ASC',
+    'order' => 'DESC',
     'hide_empty' => 0
 ) );
 ?>
@@ -59,7 +59,7 @@ $terms = get_terms( 'animal_cat', array(
           // Define the query
           $args = array(
               'post_type' => 'festival_year',
-              'order' => 'ASC',
+              'order' => 'DESC',
               'animal_cat' => $term->slug
           ); ?>
           <div class="yearArchive"> 
