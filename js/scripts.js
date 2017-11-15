@@ -1,5 +1,7 @@
 
 	$(document).ready(function(){
+//tag cloud reverse 
+ $(".tagcloud").append($(".tagcloud a").get().reverse());
 	
 	$('.bxslider').bxSlider({
 	  mode: 'fade',
@@ -140,3 +142,6 @@ for(var i = 0; i < images.length; i++){
 
 
 });
+
+
+

@@ -217,24 +217,7 @@ header{
 }
 //additional Programming 
 
-.additional_prog_header {
-			border-bottom: 3px solid #87000F;
-			padding: 10px 0;
-			margin-top: 25px;
-		}
 
-		.otherProjects {
-			border-bottom: 3px solid #87000F;
-			padding: 10px 0;
-
-		}
-
-		.additionalProgEach {
-			img {
-				width: 100%;
-				height: auto;
-			}
-		}
 
 // boxslider
 ul.bxslider {
@@ -618,6 +601,14 @@ button {
 	margin-bottom: 10px;
 		
 }
+
+.otherProjectsToggle {
+	background: white;
+	border: 6px solid #79981e;
+
+}
+
+
 .artistCaption{
 	font-family: $headfont;
 	@include fontSize(8);
@@ -637,6 +628,7 @@ button {
 	text-decoration: none;
 	color: #000;
 }
+
 
 /* Toggle Link hover state */
 .toggle .toggle-trigger:hover {

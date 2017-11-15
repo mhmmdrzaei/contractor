@@ -197,6 +197,7 @@ function hackeryou_widgets_init() {
 
 	register_sidebar( array(
 		'name' => 'Blogpost Catagory Area',
+		'order'=> 'DESC',
 		'id' => 'blogpost-widget-area',
 		'description' => 'The blogpost widget area',
 		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',

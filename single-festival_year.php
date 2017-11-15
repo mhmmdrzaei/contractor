@@ -161,21 +161,23 @@
                    
                      </div>
                    <?php endwhile;//end of Promo Material ?>
+
                      <!-- additional Programming -->
                      <?php while( has_sub_fields('additional_progamming') ): ?>
-                       
+                      <div class="toggle otherProjectsToggle">
                      <div class="otherProjects">
                      
-                         <div class="additionalProgEach ">
-                          <h2 class="additional_prog_header"><?php the_sub_field('additional_prog_title'); ?></h2>
+                         <div class="additionalProgEach additionalEach">
+                          <h2 class="toggle-trigger additional_prog_header"><?php the_sub_field('additional_prog_title'); ?></h2>
                       
                       <!-- Toggle Content to display -->
-                      
+                      <div class="toggle-content">
                          <?php the_sub_field('additional_prog_text'); ?> 
+                      </div>
                     </div>
 
                     </div>
-                    
+                    </div>
                      
                      <?php endwhile;//end of additional Programming loop ?>
 
