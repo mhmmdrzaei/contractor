@@ -49,6 +49,19 @@
                        </div>
                    
                      <?php endif; ?>
+                    <div class="sideInstagram">
+                      <?php
+
+                      // vars 
+                      $igoption = get_field('instagram_option');
+
+
+                      // check
+                      if( $igoption && in_array('side', $igoption) ): ?>
+                        <? the_field('instagram_feed'); ?>
+                      <?php endif; ?>
+                    </div>
+
                    </div>
                </div>
 
@@ -67,7 +80,16 @@
                      </ul><!-- .bxslider -->
                  <?php endif;  // end gallery repeater field?>
                  <!-- instagram -->
-                 <? the_field('instagram_feed'); ?>
+                 <?php
+
+                 // vars 
+                 $igoption = get_field('instagram_option');
+
+
+                 // check
+                 if( $igoption && in_array('main', $igoption) ): ?>
+                   <? the_field('instagram_feed'); ?>
+                 <?php endif; ?>
                  <!-- Artists -->
                  <?php if( has_sub_fields('artists_festival_year') ): ?>
 

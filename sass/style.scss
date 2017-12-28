@@ -604,7 +604,7 @@ button {
 
 .otherProjectsToggle {
 	background: white;
-	border: 6px solid #79981e;
+	border: 4px solid #79981e;
 
 }
 
@@ -716,6 +716,14 @@ button {
 	border: solid 1px;
 	box-shadow: 4px 4px 5px -2px rgba(0,0,0,.75);
     margin-bottom: 10px;
+}
+
+.sideInstagram{
+	#sb_instagram{
+		background: white;
+		border: none;
+		box-shadow: none;
+	}
 }
 	// Media Quaries 
 	@media(max-width: 952px){
