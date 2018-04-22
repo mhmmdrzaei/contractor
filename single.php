@@ -11,6 +11,7 @@
 
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <h2 class="entry-title"><?php the_title(); ?></h2>
+          <p>Written By <?php the_author(); ?></p>
 
           <div class="entry-meta">
           <!-- <?php hackeryou_posted_on(); ?> -->
