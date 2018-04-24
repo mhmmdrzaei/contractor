@@ -23,7 +23,7 @@
                    
              
                  </div> <? /* */  ?>
-                 <a href="<? the_permalink(); ?>"><h4><? the_title(); ?></h4></a>
+                 <a href="<php the_permalink();?>"><h4><? the_title(); ?></h4></a>
                  <div class="entry-content">
                    <?
                    global $more;    // Declare global $more (before the loop).
